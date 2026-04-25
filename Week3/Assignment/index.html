@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Student Demo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        #card {
+            width: 90%;
+            max-width: 320px;
+            margin: auto;
+            padding: 15px;
+            border: 2px solid #888;
+            background: #f9f9f9;
+            transition: 0.3s;
+        }
+
+        .blue-bg {
+            background-color: lightblue;
+        }
+
+        .dark {
+            background: black;
+            color: white;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="card">
+    <h3 id="name">Student Name</h3>
+    <p id="info">Learning jQuery basics.</p>
+
+    <input type="text" id="input-name" placeholder="Enter new name"><br><br>
+
+    <ul id="subjects">
+        <li>Math</li>
+        <li>Science</li>
+        <li>Computer</li>
+    </ul>
+</div>
+
+<h3>Controls</h3>
+
+<button id="get-name">Get Name</button>
+<button id="set-name">Set Name</button>
+
+<button id="hide-img">Hide Image</button>
+<button id="show-img">Show Image</button>
+
+<button id="fade-toggle">Fade Toggle</button>
+
+<button id="slide-subjects">Slide Subjects</button>
+
+<button id="bg-change">Change Background</button>
+<button id="dark-mode">Dark Mode</button>
+<button id="circle-img">Circle Image</button>
+
+<h3>Output:</h3>
+<p id="result"></p>
+
+<script>
+$(document).ready(function(){
+
+    $("#get-name").click(function(){
+        let name = $("#name").text();
+        $("#result").text(name);
+    });
+
+    $("#set-name").click(function(){
+        let newName = $("#input-name").val();
+        $("#name").text(newName);
+    });
+
+    $("#hide-img").click(function(){
+        $("#photo").hide();
+    });
+
+    $("#show-img").click(function(){
+        $("#photo").show();
+    });
+
+    $("#fade-toggle").click(function(){
+        $("#card").fadeToggle();
+    });
+
+    $("#slide-subjects").click(function(){
+        $("#subjects").slideToggle();
+    });
+
+    $("#bg-change").click(function(){
+        $("#card").toggleClass("blue-bg");
+    });
+
+    $("#dark-mode").click(function(){
+        $("body").toggleClass("dark");
+    });
+
+    $("#circle-img").click(function(){
+        $("#photo").toggleClass("circle");
+    });
+
+});
+</script>
+
+</body>
+</html>

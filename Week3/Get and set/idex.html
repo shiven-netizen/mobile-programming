@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GET & SET Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <h3 id="student-name">Shiven Magar</h3>
+    <p id="student-bio"><b>Student</b> learning jQuery basics</p>
+
+    <input type="text" id="nickname-input" placeholder="Enter nickname">
+    
+    <div id="output" style="margin-top:10px; font-weight:bold;"></div>
+
+    <br><br>
+
+    <button id="show-name">Show Name</button>
+    <button id="change-name">Change Name</button>
+    <button id="show-html">Show html</button>
+    <button id="show-value">Show value</button>
+    <button id="set-input">Set Input</button>
+
+    <script>
+        $(document).ready(function(){
+
+            // Show Name
+            $("#show-name").click(function(){
+                let name = $("#student-name").text();
+                $("#output").text(name);
+            });
+
+            // Change Name
+            $("#change-name").click(function(){
+                $("#student-name").text("Shiven Thapa Magar");
+            });
+
+            // Show html
+            $("#show-html").click(function(){
+                let bio = $("#student-bio").html();
+                $("#output").text(bio);
+            });
+
+            // put input value
+            $("#show-value").click(function(){
+                let value = $("#nickname-input").val();
+                $("#output").text(value);
+            });
+
+            // Set Input value
+            $("#set-input").click(function(){
+                $("#nickname-input").val("Java");
+            });
+
+        });
+    </script>
+
+</body>
+</html>
